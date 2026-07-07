@@ -1,10 +1,44 @@
-img {
-    width: 300px;
+.global {
+    display: grid;
+    grid-template-areas: "a c"
+                         "b d";
+    margin: 20px;
+    gap: 20px;
 }
 
-body {
-    text-align: center;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    background: rgb(201, 210, 207);
-    color: rgb(5, 53, 93);
+
+.grid-item-1{
+    grid-area: a;
+    background-color: rgb(172, 34, 34);
 }
+
+.grid-item-2 {
+    grid-area: b;
+    background-color: rgb(222, 230, 9);
+}
+
+.grid-item-3 {
+    grid-area: c;
+    background-color: rgb(70, 60, 219);
+}
+.grid-item-4 {
+    grid-area: d;
+    background-color: rgb(161, 26, 179);
+}
+
+.global {
+    justify-content: center;
+    align-items: center;
+}
+body{
+    background-image: linear-gradient(to right, green 30%, blue ,purple);
+}
+.gradient-test{
+    font-size: 100px;
+    font-weight: bold;
+    background: linear-gradient(200deg, #ffbe00 0%,#41fc54 50%,#338ffe 100%);
+    background-size: 100% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    }
