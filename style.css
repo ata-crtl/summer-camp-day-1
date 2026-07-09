@@ -1,44 +1,249 @@
-.global {
-    display: grid;
-    grid-template-areas: "a c"
-                         "b d";
-    margin: 20px;
+/* --- Global Styles & Resets --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: #1a1a24;
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* Soft gradient background */
+    background: conic-gradient(
+        from 180deg, 
+        #DEEFB7, 
+        #98DFAF, 
+        #5FB49C, 
+        #DEEFB7
+    );
+    background-size: cover;
+}
+
+/* --- Navigation Bar --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 150px 20px 40px; 
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px); /* Frosted-glass effect */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar .logo {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: -1px;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
     gap: 20px;
 }
 
-
-.grid-item-1{
-    grid-area: a;
-    background-color: rgb(172, 34, 34);
+.navbar ul li a {
+    text-decoration: none;
+    color: #1a1a24;
+    font-weight: 600;
+    font-size: 15px;
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: all 0.2s ease;
 }
 
-.grid-item-2 {
-    grid-area: b;
-    background-color: rgb(222, 230, 9);
+.navbar ul li a:hover, 
+.navbar ul li a.active {
+    background-color: rgba(0, 0, 0, 0.08);
 }
 
-.grid-item-3 {
-    grid-area: c;
-    background-color: rgb(70, 60, 219);
-}
-.grid-item-4 {
-    grid-area: d;
-    background-color: rgb(161, 26, 179);
+/* --- Hero Header Section --- */
+.hero-section {
+    padding: 60px 20px 30px;
 }
 
-.global {
-    justify-content: center;
-    align-items: center;
-}
-body{
-    background-image: linear-gradient(to right, green 30%, blue ,purple);
-}
-.gradient-test{
-    font-size: 100px;
-    font-weight: bold;
-    background: linear-gradient(200deg, #ffbe00 0%,#41fc54 50%,#338ffe 100%);
-    background-size: 100% 100%;
+.gradient-test {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 80px;
+    font-weight: 800;
+    background: linear-gradient(135deg, #1f4037 0%, #99f2c8 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    }
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 18px;
+    opacity: 0.8;
+}
+
+/* --- Home Card Grid Layout --- */
+.global {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    max-width: 1100px;
+    margin: 40px auto;
+    gap: 25px;
+    padding: 0 20px;
+    width: 100%;
+}
+
+/* Shared styling for grid cards */
+.grid-item {
+    background: rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    padding: 35px 25px;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+    min-height: 200px;
+}
+
+.grid-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.1);
+}
+
+.grid-item h3 {
+    font-size: 22px;
+    margin-bottom: 12px;
+    color: #111;
+}
+
+.grid-item p {
+    font-size: 15px;
+    color: #444;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+/* Styled link buttons inside cards */
+.card-link {
+    text-decoration: none;
+    color: #1a1a24;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.card-link:hover {
+    background: #1a1a24;
+    color: #fff;
+    border-color: #1a1a24;
+}
+
+/* --- About Page Layout --- */
+.about-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1; /* Centers content vertically between nav and footer */
+    padding: 40px 20px;
+}
+
+.profile-card {
+    background: rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    padding: 50px 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
+    max-width: 600px;
+    width: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.08);
+}
+
+.bio-text {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #2c2c35;
+    margin-bottom: 30px;
+}
+
+.about-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    width: 100%;
+}
+
+/* Highlighting the back home button */
+.about-links .card-link.home-btn {
+    background: #1a1a24;
+    color: #fff;
+    border-color: #1a1a24;
+}
+
+.about-links .card-link.home-btn:hover {
+    background: rgba(255, 255, 255, 0.6);
+    color: #1a1a24;
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+/* --- Matrix Screen Takeover --- */
+.matrix-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000; /* Stays on top of the black matrix rain */
+  padding: 8px 16px;
+  background-color: #000;
+  color: #00ff00;
+  border: 1.5px solid #00ff00;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 4px;
+}
+
+.matrix-btn:hover {
+  background-color: #00ff00;
+  color: #000;
+  box-shadow: 0 0 15px #00ff00;
+}
+
+#matrix-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 999; /* Below the toggle button, above everything else */
+  display: none;
+  background-color: #000;
+}
+
+/* --- Footer --- */
+.main-footer {
+    padding: 40px 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    margin-top: auto;
+    font-size: 14px;
+    opacity: 0.7;
+}

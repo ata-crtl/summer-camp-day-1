@@ -1,45 +1,61 @@
 <!DOCTYPE html>
-<html>
-    <head>
-       <link rel="stylesheet" href="style.css"/>
-       <link rel="icon" type="image/x-icon" href="New Piskel.png">
-    </head>
-
-    <body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ataullah Afnan | Portfolio</title>
+    <!-- Importing modern, clean fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="icon" type="image/x-icon" href="New Piskel.png">
+</head>
+<body>
     
-     <nav>
+    <button id="matrix-toggle" class="matrix-btn">Enter the Matrix</button>
+
+    
+    <canvas id="matrix-canvas"></canvas> 
+
+    
+    <nav class="navbar">
+        <div class="logo">Ataullah.</div>
         <ul>
-            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html" class="active">Home</a></li>
             <li><a href="about.html">About</a></li>
         </ul>
-     </nav>
-       
-
-        <header>
-            <div class="header-content"  id="header content" >
-                <h2>Header</h2>
-            
-            </div>
-
-
-        </header>
-
-
-     <h2>hello there !</h2>
-     <p>This is one's personal site , feel free to look around</p>
-     <br>
-     <a href="https://github.com/ata-crtl">my github, the graveyard of my failure's</a>
-     <br>
-     <a href="mailto:ataullahafnan@outlook.com">Email me</a>
-     <br>
-     <a href="/about.html"> learn about me  <menu></menu></a>
-
-     <footer>
-
-      <h3> footer <h3>
-     </footer>
+    </nav>
+    
+    
+    <header class="hero-section">
+        <h1 class="gradient-test">Welcome.</h1>
+        <p class="subtitle">This is my personal site, feel free to look around.</p>
+    </header>
 
     
+    <main class="global">
+        <div class="grid-item grid-item-1">
+            <h3>About Me</h3>
+            <p>Learn more about my background, skills, and journey.</p>
+            <a href="about.html" class="card-link">Read Bio →</a>
+        </div>
 
-    </body>
+        <div class="grid-item grid-item-2">
+            <h3>My Code</h3>
+            <p>The graveyard of my failures (and a few successes).</p>
+            <a href="https://github.com/ata-crtl" target="_blank" class="card-link">Visit GitHub →</a>
+        </div>
+
+        <div class="grid-item grid-item-3">
+            <h3>Let's Chat</h3>
+            <p>Have a question, a project, or just want to say hello?</p>
+            <a href="mailto:ataullahafnan@outlook.com" class="card-link">Shoot an Email →</a>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2026 Ataullah Afnan. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
 </html>
